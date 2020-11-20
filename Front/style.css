@@ -1,0 +1,107 @@
+.product
+{
+	display: flex;
+}
+
+.productInfo
+{
+	display: flex;
+	flex-direction: column;
+}
+
+.boutonSpacing
+{
+	margin-bottom: 10px;
+}
+
+.boutonColorSpacing
+{
+	margin-top: 10px;
+	margin-right: auto;
+}
+
+.card
+{
+	width: 100%;
+}
+
+.card-body-product
+{
+	height: 45vh;
+}
+
+.card-commander
+{
+	margin-top: 68px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.card-img-top
+{
+	height: 25vh;
+	object-fit: cover;
+}
+
+.card-img-left
+{
+	height: 45vh;
+	object-fit: cover;
+}
+
+.cart-content
+{
+	margin-top: 15px;
+	display: flex;
+	flex-direction: column;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.item
+{
+	margin-top: 5px;
+	border: #e3e3e3 solid 1px;
+	align-items: center;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.cart-image
+{
+	height: 10vh;
+	object-fit: cover;
+}
+
+.formulaire
+{
+	margin-top: 30px;
+	padding: 5px;
+}
+
+.footer
+{
+	margin-top: 50px;
+}
+
+.required label 
+{
+    font-weight: bold;
+}
+
+.required label:after 
+{
+    color: #e32;
+    content: ' *';
+    display:inline;
+}
+
+.text-muted
+{
+	padding-bottom: 5px;
+}
+
+input:required:focus:invalid, input[pattern]:focus:invalid {
+    border-color: #f79c9c;
+    box-shadow: 0 0 1px #f79c9c;
+}
