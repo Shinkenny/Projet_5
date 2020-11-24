@@ -26,7 +26,7 @@ fetch(url)
 	function getTeddiesInfos(element) {
 	  let main=document.getElementById('main');
     let row=document.createElement('DIV');
-    row.className="col-4";
+    row.className="col-xs-12 col-md-4";
 
     main.appendChild(row);
 
@@ -58,6 +58,7 @@ fetch(url)
     p.innerHTML=element.description;
     p.className="card-text";
 
+    // Append section
     cardBody.appendChild(img);
     cardBody.appendChild(a);
     cardBody.appendChild(p);

@@ -52,7 +52,7 @@ fetch(url)
 		   	data.colors.forEach(element=>{
 		   	let option=document.createElement('option');
 			   	option.innerHTML=element;
-			   	option.value=element
+			   	option.value=element;
 			   	colorSelect.appendChild(option);
 		   	})
 
@@ -62,11 +62,10 @@ fetch(url)
 		    rowRight.appendChild(pr);
 		    rowRight.appendChild(p);
 		  
-
-		     // Create cart button
+		    // Create cart button
 		    let b=document.getElementById('btnSubmit');
 
-		// On button click
+		// On cart button click
 		b.addEventListener('click', (event)=>{
 			event.preventDefault();
 		

@@ -41,12 +41,14 @@
 {
 	height: 25vh;
 	object-fit: cover;
+	width: 100%;
 }
 
 .card-img-left
 {
 	height: 45vh;
-	object-fit: cover;
+	object-fit: contain;
+	width: 100%;
 }
 
 .cart-content
@@ -104,4 +106,23 @@
 input:required:focus:invalid, input[pattern]:focus:invalid {
     border-color: #f79c9c;
     box-shadow: 0 0 1px #f79c9c;
+}
+
+@media (max-width: 768px)
+{
+	.cart-image
+	{
+		height: 25vh;
+		object-fit: cover;
+	}
+
+	.cart-text
+	{
+		text-align: center;
+	}
+
+	.cart-btn
+	{
+		margin: auto;
+	}
 }
