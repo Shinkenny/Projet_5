@@ -2,6 +2,36 @@
 let queryString=window.location.search;
 let id=new URLSearchParams(queryString).get("id");
 let url="http://localhost:3000/api/teddies/"+id;
+let cart = JSON.parse(localStorage.getItem('monPanier'));
+let numberInCart = document.getElementById('numberInCart');
+let currentNumber=0;
+
+// Start the function to initialize the product
+InitializeCartNumber();
+
+// Initialization of the cart
+function InitializeCartNumber(){
+	if(cart===null){
+ 		
+	}
+	else{
+		cart.forEach(element =>{
+			GetCartInfos(element);
+			DisplayNumberInCart();
+		}) 
+	}
+}
+
+// Get the cart informations
+function GetCartInfos(element){
+  currentNumber += element.Qty;
+}
+
+// Get the number of items in the cart
+function DisplayNumberInCart(){
+    let totalNumber = currentNumber;
+    numberInCart.innerHTML = totalNumber;
+}
 
 fetch(url)
   .then(
@@ -96,8 +126,10 @@ fetch(url)
 			}
 			
 			localStorage.setItem('monPanier', JSON.stringify(panier));
+			currentNumber++;
+			DisplayNumberInCart();
 		})
-      });
+      }); 
     }
   )
   .catch(function(err) {

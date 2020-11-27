@@ -3,6 +3,17 @@
 	display: flex;
 }
 
+.cart-number
+{
+	display: inline-flex;
+}
+
+#numberInCart
+{
+	color: #b957e4;
+	margin: auto;
+}
+
 .productInfo
 {
 	display: flex;

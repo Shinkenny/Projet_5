@@ -11,6 +11,8 @@ let lastname=document.getElementById('name');
 let adress=document.getElementById('adress');
 let city=document.getElementById('city');
 let mail=document.getElementById('mail');
+let numberInCart = document.getElementById('numberInCart');
+let currentNumber=0;
 
 // Start the function to initialize the cart
 InitializeCart();
@@ -35,8 +37,15 @@ function InitializeCart(){
 	else{
 		panier.forEach(element =>{
 			DisplayCart(element);
+			DisplayNumberInCart();
 		}) 
 	}
+}
+
+// Get the number of items in the cart
+function DisplayNumberInCart(){
+  	let totalNumber=currentNumber;
+    numberInCart.innerHTML = totalNumber;
 }
 
 // Create the appropriate element per row
@@ -68,6 +77,7 @@ function DisplayCart(element){
 	let div5=document.createElement('DIV');
 	div5.className='col-md-2 cart-text';
 	div5.innerHTML='Quantité : ' + element.Qty;
+	currentNumber += element.Qty;
 
 	// Get minus quantity button
 	let div6=document.createElement('BUTTON');
@@ -78,12 +88,14 @@ function DisplayCart(element){
 	div6.addEventListener('click', (event)=>{
 		event.preventDefault();
 		element.Qty--;
+		currentNumber--;
+		DisplayNumberInCart();
 		div5.innerHTML='Quantité : ' + element.Qty;
 		currentPrice-=element.Price;
 		totalPrice.innerHTML=currentPrice + ' €';
 		
 		for (let i=0; i<panier.length; i++){
-			if(panier[i].Id==element.Id){
+			if(panier[i].Id==element.Id && panier[i].Color==element.Color){
 				localStorage.removeItem('monPanier');
 				if(element.Qty==0){
 					div.style.display='none';
